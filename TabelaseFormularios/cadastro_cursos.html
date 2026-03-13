@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela cursos</title>
+    <link rel="stylesheet" href="css/syle.css">
+</head>
+<body>
+    <table id = "tabela1">
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Carga horario</th>
+                <th>Nivel</th>
+                <th>Modalidade</th>
+                <th>Vagas</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>HTML e CSS</td>
+                <td>30h</td>
+                <td>Basico</td>
+                <td>Online</td>
+                <td>20</td>
+            </tr>
+
+            <tr>
+                <td>JavaScript</td>
+                <td>40h</td>
+                <td>Intermediario</td>
+                <td>Presencial</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <td>Banco de dados</td>
+                <td>35h</td>
+                <td>Intermediario</td>
+                <td>Online</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form>  
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <label for="curso">Curso desejado:</label>
+        <select id="curso" name="curso">
+            <option value="HTML e CSS"></option>
+            <option value="JavaScript"></option>
+            <option value="Banco de Dados"></option>
+        </select>
+        <br><br>
+
+        <label for="modalidade">Modalidade: </label><br>
+        <input type="radio" id="online" name="modalidade" value="online">
+        <label for="online">Online</label><br>
+        <input type="radio" id="presencial" name="modalidade" value="presencial">
+        <label for="presencial">Presencial</label>
+        <br><br>
+
+        <label for="areas">Areas de interesse:</label>
+        <input type="checkbox" id="frontend" name="areas" value="frontend">
+        <label for="frontend">Front-end</label><br>
+        <input type="checkbox" name="areas" id="backend" value="backend">
+        <label for="backend">Back-end</label><br>
+        <input type="checkbox" id="banco" name="areas" value="banco">
+        <label for="banco">Banco de Dados</label><br>
+        <input type="checkbox" name="areas" id="ia" value="ia">
+        <label for="ia">Inteligencia artificial</label>
+        <br><br>
+
+        <label for="comentarios">Comentarios adicionais:</label>
+        <textarea name="comentarios" id="comentarios"></textarea>
+        <br><br>
+
+        <button type="submit">Realizar inscrição</button>
+    </form>
+</body>
+</html>

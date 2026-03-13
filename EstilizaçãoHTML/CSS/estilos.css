@@ -1,0 +1,96 @@
+#cabecalho h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 1px;
+    border: 2px dotted cornflowerblue;
+    padding: 5px;
+}
+
+#cabecalho p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+#hero {
+    text-align: center;
+    padding: 10px;
+}
+
+.conteu10 h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 26px;
+
+}
+
+.conteu10 p {
+    color: white;
+    text-align: center;
+}
+
+.conteu10 figure {
+    text-align: center;
+    padding: 15px;
+}
+
+.conteudo h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 26px;
+}
+
+.conteudo ul {
+    color: white;
+    text-align: center;
+    list-style-position: inside;
+
+}
+
+body {
+    background-color: black;
+}
+
+.conteudo-destaque h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 30px;
+    text-align: center;
+    color: white ;
+}
+
+.conteudo-destaque {
+    text-align: center;
+}
+
+.conteudo-destaque a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:cornflowerblue;
+    font-size: 50px;
+    border: 3px cornflowerblue;
+    border-style: solid;
+    padding: 10px;
+}
+.conteudo-destaque p {
+    padding: 35px;
+    color: white;
+}
+
+#rodape {
+    margin: 120px 0px 0px;
+}
+
+#rodape p {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+}
+
+#rodape a {
+    color: cornflowerblue;
+    font-size: 14px;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal tecnico</title>
+</head>
+<body>
+    <header>
+        <h1>
+            DOM VS CSSOM
+        </h1>
+        <p>
+            Entendendo como o navegador transforma codigo em pixels na tela!
+        </p>
+        <nav>
+            <ul>
+                <li><a href="#dom-cssom">DOM e CSSOM</a></li>
+                <li><a href="#render-layout">Render Tree e Layout</a></li>
+                <li><a href="#paint">Paint</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dom-cssom">
+            <h2>Construção do DOM e CSSOM</h2>
+
+            <article>
+                <h3>O que é o DOM?</h3>
+                <p> DOM (Document Object Model) - É a representação em árvore do seu HTML. O navegador lê o HTML linha por linha e vai criando "nós" (tags, atributos, texto). Cada tag vira um objeto que pode ser acessado via JavaScript depois.</p>
+                <p>Enquanto o navegador lê o HTML, ele vai criando nós para cada elemento, criando uma estrutura de pais e filhos.</p>
+            </article>
+
+            <article>
+                <h3>O que é CSSOM?</h3>
+                <p>CSSOM (CSS Object Model) - É a mesma coisa, mas com os estilos! O navegador lê todas as regras CSS (nosso style, arquivos externos, etc) e monta uma árvore com os seletores e suas propriedades.</p>
+                <p>O navegador faz o mesmo processo, mas com as regras CSS.</p>
+            </article>
+
+            <h3>Comparativo entre DOM e CSSOM</h3>
+            <table>
+                <tr>
+                    <th>DOM</th>
+                    <th>CSSOM</th>
+                </tr>
+
+                <tr>
+                    <td>Representa a estrturura HTML</td>
+                    <td>Representa as reglas de estilo CSS</td>
+                </tr>
+
+                <tr>
+                    <td>É construído a partir de HTML</td>
+                    <td>É construído a partir de CSS</td>
+                </tr>
+
+                <tr>
+                    <td>Cada tag vira um "nó" no DOM</td>
+                    <td>Cada seletor vira uma regra de no CSSOM</td>
+                </tr>
+
+                <tr>
+                    <td>Pode ser manipulado com JS (JavaScript)</td>
+                    <td>Também pode ser acessado via JS. Mas é menos comum</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="render-layout">
+            <h2>Render Tree e Layout</h2>
+            
+            <h3>Render Tree:</h3>
+            <p>É a COMBINAÇÃO dos dois! O navegador junta o DOM (estrutura) com o CSSOM (estilo) e cria uma nova árvore contendo APENAS os elementos que serão realmente renderizados na tela. Elementos escondidos com display: none não entram aqui!</p>
+
+            <h3>Layout (ou Reflow):</h3>
+            <p>É o cálculo das posições! O navegador calcula: "Esse texto vai ocupar quanto de largura? Esse botão vai estar a quantos pixels do topo?" É como se ele desse coordenadas pra cada elemento.</p>
+
+        </section>
+        
+        <section id="paint">
+            <h2>Paint: A etapa final</h2>
+            
+            <h3>O que é Paint?</h3>
+            <p>Agora é desenhar de verdade! O navegador pega tudo que calculou no Layout e preenche os pixels na tela - cores, imagens, sombras, bordas... É como se fosse um pintor seguindo o desenho técnico.</p>
+
+            <h3>As 5 Etapas do processo de renderização</h3>
+            <ol>
+                <li>Construção do <strong>DOM</strong></li>
+                <li>Construção do <strong>CSSOM</strong></li>
+                <li>Combinação na <strong>Render TREE</strong></li>
+                <li>Cálculo do <strong>Layout</strong></li>
+                <li><mark>Paint</mark> (pintura)</li>
+            </ol>
+
+            <h3>Exemplo pratico de codigo HTML:</h3>
+            <pre>
+                <code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Minha página&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Título&lt;/h1&gt;
+                        &lt;p&gt;Meu <em>primeiro</em> texto&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;        
+                </code>
+            </pre>
+
+            <h3>Citação da documentação oficial</h3>
+            <blockquote cite="https://developer.mozilla.org/pt-BR/docs/Web/Performance/How_browsers_work">
+                "O processo de renderização começa com a construção das árvores DOM e CSSOM. 
+                Combinadas, elas formam a Render Tree, que é usada para calcular o layout 
+                de cada elemento visível e então pintá-los na tela."
+                <footer> <abbr title="Mozilla Developer Network"><br>- MDN</abbr> Web Docs</footer>
+            </blockquote>
+
+        </section>
+
+        <section id="exemplo-imagem">
+            <h2>Exemplo de imagem responsiva hehe</h2>
+
+            <figure>
+                <picture> 
+                    <source media="(min-width: 1024px)" srcset="https://img.freepik.com/fotos-gratis/caminho-estreito-em-um-jardim-cercado-por-muitas-flores-coloridas_181624-13183.jpg?semt=ais_hybrid&w=740&q=80">
+
+                    <source media="(min-width: 640px)" srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ55_pzRQgER05GIN5qz6qJ2IlpnbvrG5Lh9w&s">
+
+                    <img src="https://via.placeholder.com/400x200/e74c3c/ffffff?text=Mobile:+400x200"
+                     alt="Exemplo de imagem responsiva mostrando o processo de renderização do navegador"
+                     width="400"
+                     height="200"
+                     loading="lazy">
+
+                </picture>
+
+                <figcaption>
+                    <strong>Figura 1:</strong> Exemplo de imagem responsiva - O navegador vai escolher a melhor versão baseada na tela do usuario.
+                    <em>(Placeholder apenas para demonstração fechou)</em>
+                </figcaption>
+            </figure>
+
+        </section>
+    </main>
+
+    <aside>
+        <h3>Links recomendados</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works"
+                target="_blank"
+                rel="noopener noreferrer">
+                MDN: Como os navegadores funcionam!
+                </a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/js/js_htmldom.asp"
+                target="_blank"
+                rel="noopener noreferrer">
+                w3schools: DOM tutorial
+                </a>
+            </li>
+            <li>
+                <a href="https://css-tricks.com/dom/"
+                target="_blank"
+                rel="noopener noreferrer">
+                CSS tricks: o que é DOM??
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <footer>
+        <h3>-----------------------------------------------</h3>
+        <ul>
+            <li>Publicado por DIOGO OLIVEIRA</li>
+            <li>Em <time datetime="2026-03-03">03 de março de 2026</time></li>
+            <li><a href="mailto:oa.diogo@gmail.com">Meu email!</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

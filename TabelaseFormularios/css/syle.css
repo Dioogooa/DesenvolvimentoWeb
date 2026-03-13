@@ -1,0 +1,35 @@
+body {
+    background-color: #e6f2ff;
+    color: #003366;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+    padding: 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+form {
+    background-color: white;
+    padding: 10px;
+}
+
+input, select, textarea, button {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #003366;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+}
