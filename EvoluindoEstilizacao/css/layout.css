@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#cabecalho {
+    background-color: #264DE4 ;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+#cabecalho h1 {
+    font-size: 36px !important;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+#cabecalho p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#hero {
+    text-align: center;
+    width: 100%;
+}
+
+#hero img{
+    width:350px;
+    height: auto;
+    max-width: 100%;
+    padding: 40px;
+}
+
+.conteudo {
+    text-align: center;
+    padding: 15px;
+    margin: 45px auto;
+    max-width: 700px;
+    width: 90%;
+}
+
+h2 {
+    color:white;
+    text-transform: uppercase;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24px;
+    border: 3px solid #264DE4 ;
+    background-color: #264DE4;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+p {
+    color: black;
+    padding: 15px;
+    line-height: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.conteudo img {
+    margin-top: 25px;
+    width: 650px;
+    height: auto;
+}
+
+.conteudo ul {
+    list-style: none;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.conteudo li {
+    margin-bottom: 5px;
+    padding-left: 28px;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.conteudo.destaque h2 {
+    border: none;
+    color: #264DE4;
+    background-color: white;
+    font-weight: bold;
+}
+
+.conteudo.destaque p {
+    margin-bottom: 35px;
+}
+
+.conteudo li::before {
+    content: "➤" ;
+    position: absolute;
+    left: 0;
+    color: #264DE4;
+}
+
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #264DE4;
+    color: white;
+    padding: 24px 48px;
+    border-radius: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.botao::after {
+    content: "→";
+    font-size: 20px;
+    transition: transform 0.3 ease;
+}
+
+.botao:hover::after {
+    transform: translate(5px);
+}
+
+.botao:hover {
+    background-color: #1a36b0;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#rodape p {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+#rodape a {
+    color:#264DE4;
+    border: 2px dotted #264DE4 ;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
