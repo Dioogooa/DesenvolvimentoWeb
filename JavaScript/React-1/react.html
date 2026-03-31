@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React bb</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .card-Flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+    </style>
+<!-- 
+    Passo - 10
+    - O React manipula o DOM diretamento?
+    Nao, o react trabalha com dom vitual, comparando com o dom normal e so alterando quando houver sentido.
+
+    -Qual vantagem de componentes?
+    Reutilizacao em primeiro! Organizacao do codigo, facilidade de testes e de manuntencao.
+
+    -O que substitui o for no React?
+    o map() - renderizador de listas. -->
+
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const Card = (props) => {
+            return (
+                <div className="card">
+                    <h3>{props.nome}</h3>
+                    <p>{props.descricao}</p>
+                    <p>{props.preco}</p>
+                </div>
+            );
+        };
+
+        const App = () => {
+            const produtos = [
+                { nome: "Notebook", descricao: "Eletrônico", preco: "R$ 2.999,90" },
+                { nome: "Mouse", descricao: "Acessório", preco: "R$ 199,90" },
+                { nome: "Teclado", descricao: "Periférico", preco: "R$ 349,90" },
+                { nome: "Monitor", descricao: "Tela", preco: "R$ 1.199,90" }
+            ];
+            return (
+                <div className="card-Flex">
+                    {produtos.map((produto, index) => (
+                        <Card
+                            key={index}
+                            nome={produto.nome}
+                            descricao={produto.descricao}
+                            preco={produto.preco}
+                        />
+                    ))}
+                </div>
+            );
+        };
+
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+    </script>
+
+</body>
+
+</html>
