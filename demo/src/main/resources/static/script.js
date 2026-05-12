@@ -11,7 +11,7 @@ const resultadoContainer = document.getElementById('resultadoContainer');
 function mostrarMensagem(texto, tipo) {
     const cor = tipo === 'erro' ? 'danger' : tipo === 'sucesso' ? 'success' : 'info';
     mensagemContainer.innerHTML = `
-        <div class="alert alert-${cor} alert-dismissible fade show" role="alert">
+        <div class="alert alert-${cor} alert-dismissible fade show" role="alert">  
             ${texto}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
