@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: optional:classpath:application-local.yml
+  application:
+    name: api-petshop
+  datasource:
+    url: jdbc:postgresql://localhost:5435/api-petshop
+    username: petshop_admin
+    password: adminpetshop
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

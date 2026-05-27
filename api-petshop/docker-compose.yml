@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: petshop-db
+    environment:
+      POSTGRES_DB: api-petshop
+      POSTGRES_USER: petshop_admin
+      POSTGRES_PASSWORD: adminpetshop
+    ports:
+      - "5435:5432" 
