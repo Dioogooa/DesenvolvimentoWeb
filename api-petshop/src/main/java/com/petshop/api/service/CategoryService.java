@@ -67,10 +67,14 @@ public class CategoryService {
 
     @Transactional
     public void delete(Long id) {
-        Product product = ProductRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Produto", id));
-        product.setActive(false);
-        ProductRepository.save(product);
+        Category category = categoryRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Categoria", id));
+
+        if (category.getProducts() != null && !category.getProducts().isEmpty()) {
+            throw new BusinessException("Não é possivel excluir uma categoria que possui produtos vinculados.");
+        }
+
+        categoryRepository.delete(category);
     }
 }
 
