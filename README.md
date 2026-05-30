@@ -283,4 +283,4 @@ Content-Type: application/json
 
 ## 👨‍💻 Autor
 
-Desenvolvido como projeto acadêmico para a disciplina de desenvolvimento de APIs REST com Spring Boot.
+Desenvolvido como projeto acadêmico para a disciplina de desenvolvimento Web.
