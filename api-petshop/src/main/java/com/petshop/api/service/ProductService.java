@@ -28,6 +28,13 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
+    public List<ProductResponse> findByCategory(Long categoryId) {
+        return productRepository.findByCategoryId(categoryId)
+                .stream()
+                .map(ProductResponse::from)
+                .collect(Collectors.toList());
+    }
+
     public List<ProductResponse> search(String name) {
         return productRepository.searchByName(name)
                 .stream()

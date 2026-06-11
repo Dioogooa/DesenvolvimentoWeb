@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
-
 public class Product {
 
     @Id
@@ -42,7 +41,7 @@ public class Product {
 
     @Column(nullable = false)
     @Builder.Default
-    private Boolean active;
+    private Boolean active = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
